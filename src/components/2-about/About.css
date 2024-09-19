@@ -1,0 +1,11 @@
+.btn-bioent {
+  background-color: #019cd4 !important;
+  border: 1px solid #fff !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  color: #fff;
+}
+
+.btn-bioent:hover {
+  background-color: #017aa5 !important;
+  color: #fff;
+}
