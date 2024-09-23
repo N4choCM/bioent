@@ -1,5 +1,17 @@
 # 📋 Changelog
 
+## 📅 23/09/2024
+
+### 🆕 Features
+
+#### 🧮 0.2.0
+
+- ✅ ADDED: New texts
+- ✅ ADDED: New pics and favicon
+- 👾 FIXED: Logo changed to white in navbar and footer for contrast reasons
+- ✅ ADDED: Opinions Section
+- 👾 FIXED: Smoother landing page transitions
+
 ## 📅 19/09/2024
 
 ### 🆕 Features

@@ -6,6 +6,7 @@ import CheckIcon from '@mui/icons-material/Check';
 import CloseIcon from '@mui/icons-material/Close';
 import { AppStateContext } from "../../../src/state/AppProvider";
 import { useContext } from "react";
+import { Zoom } from 'react-reveal';
 
 const Contact = () => {
   const appStateContext = useContext(AppStateContext);
@@ -66,12 +67,14 @@ const Contact = () => {
       data-bs-ride="carousel"
     >
       <div className="container-fluid">
-        <div className="row">
-          <div className="col text-uppercase text-center pt-4">
-            <h3>Contacto</h3>
-            <br />
+        <Zoom>
+          <div className="row">
+            <div className="col text-uppercase text-center pt-4">
+              <h3>Contacto</h3>
+              <br />
+            </div>
           </div>
-        </div>
+        </Zoom>
         {alert.show && (
           <div className="alert-container">
             <Alert
@@ -89,42 +92,50 @@ const Contact = () => {
           ref={form}
           onSubmit={sendEmail}
         >
-          <div className="col-10 col-md-8 offset-1 offset-md-2">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Nombre"
-              required
-              name="name"
-            />
-          </div>
-          <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3">
-            <input
-              type="email"
-              className="form-control"
-              placeholder="example@example.com"
-              required
-              name="email"
-            />
-          </div>
-          <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3">
-            <textarea
-              className="form-control"
-              rows="5"
-              placeholder="Hola, os escribo para..."
-              required
-              name="message"
-            />
-          </div>
-          <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3 d-grid pb-5">
-            <button
-              className={`btn btn-bioent text-white custom-shadow-${appStateContext?.state.isDarkMode ? "dark bg-dark" : "light"}`}
-              type="submit"
-              value="Send"
-            >
-              Enviar
-            </button>
-          </div>
+          <Zoom>
+            <div className="col-10 col-md-8 offset-1 offset-md-2">
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Nombre"
+                required
+                name="name"
+              />
+            </div>
+          </Zoom>
+          <Zoom>
+            <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3">
+              <input
+                type="email"
+                className="form-control"
+                placeholder="example@example.com"
+                required
+                name="email"
+              />
+            </div>
+          </Zoom>
+          <Zoom>
+            <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3">
+              <textarea
+                className="form-control"
+                rows="5"
+                placeholder="Hola, os escribo para..."
+                required
+                name="message"
+              />
+            </div>
+          </Zoom>
+          <Zoom>
+            <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3 d-grid pb-5">
+              <button
+                className={`btn btn-bioent text-white custom-shadow-${appStateContext?.state.isDarkMode ? "dark bg-dark" : "light"}`}
+                type="submit"
+                value="Send"
+              >
+                Enviar
+              </button>
+            </div>
+          </Zoom>
         </form>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
-import Logo from "../../assets/img/bioent_logo_vertical.jpg";
+import Logo from "../../assets/img/favicon.png";
 import "./Footer.css";
 
 const Footer = () => {
@@ -37,8 +37,8 @@ const Footer = () => {
         <div className="row d-none d-lg-block">
           <img id="logo-footer-lg" src={Logo} alt="Bioent Logo" />
         </div>
-        <div className="row text-white">
-          <p>©️ Bioent</p>
+        <div className="row">
+          <p className="text-white text-center">©️ Bioent</p>
         </div>
       </div>
     </footer>
