@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Zoom } from 'react-reveal';
 import bp1 from "../assets/img/banner1.jpg";
 import bp2 from "../assets/img/banner2.jpg";
 import bp3 from "../assets/img/banner3.jpg";
@@ -11,13 +10,14 @@ import Divider from "../components/core/divider/Divider";
 import Contact from "../components/6-contact/Contact";
 import Services from "../components/3-services/Services";
 import { useMediaQuery } from 'react-responsive';
+import Opinions from '../components/4-opinions/Opinions';
 
 const HomeScreen = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isMobileOrTablet = useMediaQuery({ query: '(max-width: 1030px)' });
   const imagesMobile = [bp2, bp3, bp4];
   const imagesTabletPC = [bp1, bp2, bp3, bp4, bp5];
 
-  const images = isMobile ? imagesMobile : imagesTabletPC;
+  const images = isMobileOrTablet ? imagesMobile : imagesTabletPC;
 
   const heading1 = "bioent";
   const heading2 = "Biomecánica y Entrenamiento";
@@ -30,17 +30,13 @@ const HomeScreen = () => {
   return (
     <>
       <Banner images={images} heading1={heading1} heading2={heading2} buttonText={buttonText} buttonLink={"about"} />
-      <Zoom>
-        <About />
+        <About isMobileOrTablet={isMobileOrTablet} />
         <Divider />
-      </Zoom>
-      <Zoom>
         <Services />
         <Divider />
-      </Zoom>
-      <Zoom>
+        <Opinions />
+        <Divider />
         <Contact />
-      </Zoom>
     </>
   );
 };
