@@ -1,0 +1,24 @@
+.avatar-img {
+  width: 150px; /* Ajusta el tamaño del avatar */
+  height: 150px;
+  object-fit: cover; /* Para asegurar que la imagen no se deforme */
+  border-radius: 50%; /* Hace la imagen completamente circular */
+  margin: 0 auto; /* Centrar la imagen horizontalmente */
+  display: block; /* Para asegurar que esté centrada en su contenedor */
+}
+
+h5 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+p {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #333; /* Color para modo claro */
+  text-align: justify; /* Justificar el texto a ambos lados */
+}
+
+.text-color-dark-mode{
+  color: #ddd !important;
+}
