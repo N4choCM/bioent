@@ -12,7 +12,7 @@ import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import { useContext, useEffect, useRef, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AppStateContext } from "../../../src/state/AppProvider";
-import Logo from "../../assets/img/bioent_logo_horizontal.jpg";
+import Logo from "../../assets/img/bioent_logo_horizontal-removebg-preview.png";
 import "./Navbar.css";
 import { useLocation } from "react-router-dom"; // Import useLocation
 

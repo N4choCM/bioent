@@ -33,20 +33,23 @@
 #logo-footer{
   margin-left: auto;
   margin-right: auto;
-  width: 75vw;
-  height: 20vw;
+  width: 35vw;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 #logo-footer-md{
   margin-left: auto;
   margin-right: auto;
-  width: 60vw;
-  height: 15vw;
+  width: 30vw;
+  height: auto;
+  filter: brightness(0) invert(1);
 }
 
 #logo-footer-lg{
   margin-left: auto;
   margin-right: auto;
-  width: 25vw;
+  width: 10vw;
   height: auto;
+  filter: brightness(0) invert(1);
 }

@@ -1,6 +1,7 @@
 .img-logo {
-	width: 10rem;
+	width: 12rem;
 	border-radius: 4px;
+	filter: brightness(0) invert(1);
 }
 
 .bg-navbar-bioent {
