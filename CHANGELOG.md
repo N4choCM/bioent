@@ -4,6 +4,13 @@
 
 ### 🆕 Features
 
+#### 🧮 0.3.1
+
+- 👾 FIXED: Services dropdown display under parent 
+- 👾 FIXED: Bootstrap active nav-item color overwritten
+
+### 🆕 Features
+
 #### 🧮 0.3.0
 
 - ✅ ADDED: Services pages (fitness training, personal training and biomechanics)
