@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import up1 from "../../assets/img/user1.jpg";
 import up2 from "../../assets/img/user2.jpg";
 import up3 from "../../assets/img/user3.jpg";
@@ -35,11 +36,11 @@ const Opinions = () => {
               <div className="col col-md-6 col-lg-3 g-4" key={index}>
                 <div>
                   <img
-                    src={images[index]} // Asignar la imagen correspondiente
+                    src={images[index]} 
                     alt={name}
-                    className="rounded-circle avatar-img" // Clase para hacerla circular
+                    className="rounded-circle avatar-img" 
                   />
-                  <h5 className="mt-3 text-center">{name}</h5> {/* Nombre del usuario */}
+                  <h5 className="mt-3 text-center">{name}</h5> 
                   <p className={`${appStateContext?.state.isDarkMode ? "text-color-dark-mode" : ""}`}> {json.paragraph[index]}</p>
                 </div>
               </div>
