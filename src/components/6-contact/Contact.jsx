@@ -67,14 +67,6 @@ const Contact = () => {
       data-bs-ride="carousel"
     >
       <div className="container-fluid">
-        <Zoom>
-          <div className="row">
-            <div className="col text-uppercase text-center pt-4">
-              <h3>Contacto</h3>
-              <br />
-            </div>
-          </div>
-        </Zoom>
         {alert.show && (
           <div className="alert-container">
             <Alert
@@ -126,7 +118,7 @@ const Contact = () => {
             </div>
           </Zoom>
           <Zoom>
-            <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3 d-grid pb-5">
+            <div className="col-10 col-md-8 offset-1 offset-md-2 mt-3 d-grid">
               <button
                 className={`btn btn-bioent text-white custom-shadow-${appStateContext?.state.isDarkMode ? "dark bg-dark" : "light"}`}
                 type="submit"
