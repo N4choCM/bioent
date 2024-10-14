@@ -9,8 +9,8 @@ import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import EmailIcon from '@mui/icons-material/Email';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
-import { useContext, useEffect, useRef, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useContext, useEffect, useRef } from "react";
+import { NavLink } from "react-router-dom";
 import { AppStateContext } from "../../../src/state/AppProvider";
 import Logo from "../../assets/img/bioent_logo_horizontal-removebg-preview.png";
 import "./Navbar.css";
@@ -18,8 +18,6 @@ import { useLocation } from "react-router-dom"; // Import useLocation
 
 const NavBar = () => {
   const appStateContext = useContext(AppStateContext);
-  const [scrolled, setScrolled] = useState(false);
-  const navigate = useNavigate();
   const navbarCollapseRef = useRef(null);
   const location = useLocation(); // Get the current location
 
@@ -44,7 +42,7 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      setScrolled(offset > 10);
+      appStateContext?.dispatch({ type: "TOGGLE_NAVBAR_SCROLLED", payload: offset > 10 });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -52,7 +50,7 @@ const NavBar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [appStateContext]);
 
   // Scroll to top when the location changes
   useEffect(() => {
@@ -66,7 +64,7 @@ const NavBar = () => {
       label: "Servicios", 
       icon: <FitnessCenterIcon className="mobile-bigger mui-icon me-1"/>, 
       subItems: [
-        { to: "/services/fitness-training", label: "Entrenamientos Fitness", icon: <DirectionsRunIcon className="mobile-bigger mui-icon me-1"/>, onClick: closeMenu },
+        { to: "/services/fitness", label: "Entrenamientos Fitness", icon: <DirectionsRunIcon className="mobile-bigger mui-icon me-1"/>, onClick: closeMenu },
         { to: "/services/personal-training", label: "Entrenamientos Personales", icon: <DirectionsBikeIcon className="mobile-bigger mui-icon me-1"/>, onClick: closeMenu },
         { to: "/services/biomechanics", label: "Biomecánica", icon: <ConstructionIcon className="mobile-bigger mui-icon me-1"/>, onClick: closeMenu },
       ] 
@@ -79,7 +77,7 @@ const NavBar = () => {
       <nav
         className={`
           navbar navbar-expand-lg navbar-dark ${
-            !scrolled ? 
+            !appStateContext.state?.isNavbarScrolled ? 
             "navbar-transparent" : 
             "bg-navbar-bioent" 
           }

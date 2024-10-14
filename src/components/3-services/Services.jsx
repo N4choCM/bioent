@@ -7,6 +7,7 @@ import json from "../../assets/text/services.json";
 import "./Services.css";
 import { AppStateContext } from "../../../src/state/AppProvider";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 const Services = () => {
 	const appStateContext = useContext(AppStateContext);
@@ -41,9 +42,9 @@ const Services = () => {
 								<div className="card-body">
 									<h5 className="card-title">{json.title[1]}</h5>
 									<p className="card-text">{json.description[0]}</p>
-									<a href="#" className="btn btn-bioent">
-										{json.btn[0]}
-									</a>
+									<NavLink to="/services/fitness">
+										<button className={`btn btn-bioent text-white px-3 py-2`}>{json.btn[0]}</button>
+									</NavLink>
 								</div>
 							</div>
 						</div>
@@ -63,9 +64,9 @@ const Services = () => {
 								<div className="card-body">
 									<h5 className="card-title">{json.title[2]}</h5>
 									<p className="card-text">{json.description[1]}</p>
-									<a href="#" className="btn btn-bioent">
-										{json.btn[0]}
-									</a>
+									<NavLink to="/services/personal-training">
+										<button className={`btn btn-bioent text-white px-3 py-2`}>{json.btn[0]}</button>
+									</NavLink>
 								</div>
 							</div>
 						</div>
@@ -85,9 +86,9 @@ const Services = () => {
 								<div className="card-body">
 									<h5 className="card-title">{json.title[3]}</h5>
 									<p className="card-text">{json.description[2]}</p>
-									<a href="#" className="btn btn-bioent">
-										{json.btn[0]}
-									</a>
+									<NavLink to="/services/biomechanics">
+										<button className={`btn btn-bioent text-white px-3 py-2`}>{json.btn[0]}</button>
+									</NavLink>
 								</div>
 							</div>
 						</div>

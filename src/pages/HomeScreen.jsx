@@ -11,6 +11,7 @@ import Contact from "../components/6-contact/Contact";
 import Services from "../components/3-services/Services";
 import { useMediaQuery } from 'react-responsive';
 import Opinions from '../components/4-opinions/Opinions';
+import ContactTitle from '../components/6-contact/ContactTitle';
 
 const HomeScreen = () => {
   const isMobileOrTablet = useMediaQuery({ query: '(max-width: 1030px)' });
@@ -30,13 +31,14 @@ const HomeScreen = () => {
   return (
     <>
       <Banner images={images} heading1={heading1} heading2={heading2} buttonText={buttonText} buttonLink={"about"} />
-        <About isMobileOrTablet={isMobileOrTablet} />
-        <Divider />
-        <Services />
-        <Divider />
-        <Opinions />
-        <Divider />
-        <Contact />
+      <About isMobileOrTablet={isMobileOrTablet} />
+      <Divider />
+      <Services />
+      <Divider />
+      <Opinions />
+      <Divider />
+      <ContactTitle />
+      <Contact />
     </>
   );
 };
