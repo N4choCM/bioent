@@ -1,0 +1,54 @@
+/* Estilo del personal-banner */
+.personal-banner {
+  background-image: url('../../../assets/img/mtb.jpg'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.personal-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.personal-banner p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+/* Estilo de la sección de descripción */
+.description {
+  padding: 50px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.description h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.description p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilo de la galería */
+.training-options {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.training-options h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.training-options img {
+  height: 200px;
+  object-fit: cover;
+}
