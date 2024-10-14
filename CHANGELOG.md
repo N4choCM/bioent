@@ -1,5 +1,16 @@
 # 📋 Changelog
 
+## 📅 14/10/2024
+
+### 🆕 Features
+
+#### 🧮 0.3.0
+
+- ✅ ADDED: Services pages (fitness training, personal training and biomechanics)
+- ✅ ADDED: LegalWarning Screen
+- ❌ REMOVED: Legacy components and pages from other projects adaptation
+- ✅ ADDED: Contact Screen with Google Map
+
 ## 📅 23/09/2024
 
 ### 🆕 Features
