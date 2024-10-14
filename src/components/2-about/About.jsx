@@ -4,6 +4,7 @@ import "./About.css";
 import { AppStateContext } from "../../../src/state/AppProvider";
 import { useContext } from "react";
 import { Zoom } from 'react-reveal';
+import { NavLink } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const About = ({isMobileOrTablet}) => {
@@ -46,7 +47,9 @@ const About = ({isMobileOrTablet}) => {
 								>
 									<div className="card-body p-4">
 										<p className="card-text text-justify">{!isMobileOrTablet ? json.paragraphs[1] : json.paragraphs[3]}</p>
-											<button className="text-center btn btn-bioent">{json.paragraphs[2]}</button>
+											<NavLink to="/about">
+												<button className={`btn btn-bioent text-white px-3 py-2`}>{json.paragraphs[2]}</button>
+											</NavLink>
 									</div>
 								</div>
 							</div>
