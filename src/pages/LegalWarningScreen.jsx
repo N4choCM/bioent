@@ -1,8 +1,27 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
-import { useEffect } from 'react';
+import { useContext, useEffect } from "react";
+import { AppStateContext } from "../state/AppProvider";
 
 const LegalWarningScreen = ({ type }) => {
+  const appStateContext = useContext(AppStateContext);
+
+	useEffect(() => {
+		// Set isNavbarScrolled to true when the About component is mounted
+		appStateContext?.dispatch({
+			type: "TOGGLE_NAVBAR_SCROLLED",
+			payload: true,
+		});
+
+		// Cleanup function to reset isNavbarScrolled to false when the component is unmounted
+		return () => {
+			appStateContext?.dispatch({
+				type: "TOGGLE_NAVBAR_SCROLLED",
+				payload: false,
+			});
+		};
+	}, [appStateContext]);
+
   useEffect(() => {
     // Desplazarse hacia la parte superior cuando el componente se monta
     window.scrollTo(0, 0);
@@ -20,7 +39,7 @@ const LegalWarningScreen = ({ type }) => {
           Última actualización: 15/07/2024
         </p>
         <p>
-          Rubén Ruzafa ("nosotros", "nuestro", "nuestra" o "la empresa") se compromete a proteger y respetar tu privacidad. Esta política de privacidad describe cómo recopilamos, utilizamos y compartimos la información personal identificable que recabamos a través de nuestro sitio web www.rubenruzafa.com y www.rubenruzafa.es (el "Sitio").
+          Bioent ("nosotros", "nuestro", "nuestra" o "la empresa") se compromete a proteger y respetar tu privacidad. Esta política de privacidad describe cómo recopilamos, utilizamos y compartimos la información personal identificable que recabamos a través de nuestro sitio web www.rubenruzafa.com y www.rubenruzafa.es (el "Sitio").
         </p>
         <p>
           Por favor, lee esta política detenidamente para entender nuestras prácticas respecto a tus datos personales y cómo los trataremos.
@@ -76,7 +95,7 @@ const LegalWarningScreen = ({ type }) => {
       <>
         <h3>Aviso Legal</h3>
         <p>
-          Rubén Ruzafa es una entidad legal registrada en España. Nuestro número de identificación fiscal es [número de identificación fiscal]. Esta página web es propiedad de Rubén Ruzafa Cueto.
+          Bioent es una entidad legal registrada en España. Nuestro número de identificación fiscal es [número de identificación fiscal]. Esta página web es propiedad de Bioent Cueto.
         </p>
         <p>
           El acceso a este sitio web y el uso de la información que contiene están sujetos a los términos y condiciones descritos a continuación, así como a la legislación aplicable en España.
@@ -88,7 +107,7 @@ const LegalWarningScreen = ({ type }) => {
           En ningún caso seremos responsables por cualquier pérdida o daño, incluyendo sin limitación, pérdida o daño indirecto o consecuente, o cualquier pérdida o daño derivado de la pérdida de datos o beneficios que surjan de, o en conexión con, el uso de este sitio web.
         </p>
         <p>
-          A través de este sitio web puedes enlazar con otros sitios web que no están bajo el control de Rubén Ruzafa. No tenemos control sobre la naturaleza, el contenido y la disponibilidad de esos sitios. La inclusión de cualquier enlace no implica necesariamente una recomendación ni respaldamos las opiniones expresadas dentro de ellos.
+          A través de este sitio web puedes enlazar con otros sitios web que no están bajo el control de Bioent. No tenemos control sobre la naturaleza, el contenido y la disponibilidad de esos sitios. La inclusión de cualquier enlace no implica necesariamente una recomendación ni respaldamos las opiniones expresadas dentro de ellos.
         </p>
       </>
     );
@@ -96,6 +115,7 @@ const LegalWarningScreen = ({ type }) => {
 
   return (
     <div className="container mt-custom">
+      <br />
       <div className="row mb-5">
         <div className="col">
           <h2 className="text-center mb-4">{title}</h2>
@@ -104,6 +124,7 @@ const LegalWarningScreen = ({ type }) => {
           </div>
         </div>
       </div>
+      <br />
     </div>
   );
 };
